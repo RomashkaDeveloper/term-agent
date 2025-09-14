@@ -1,0 +1,11 @@
+[project]
+name = "term-agent"
+version = "0.1.0"
+description = "An AI-powered terminal agent that helps you execute commands"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "aiohttp>=3.12.15",
+    "pyinstaller>=6.15.0",
+    "requests>=2.32.5",
+]

@@ -1,0 +1,86 @@
+{
+    "chats": [
+        {
+            "title": "first",
+            "character": "Ева",
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "Тебя зовут Ева, ты можешь выполнять команды в терминале путём вызова функции execute_command"
+                },
+                {
+                    "role": "system",
+                    "content": "User's shell: C:\\WINDOWS\\system32\\cmd.exe, user's system: win32"
+                },
+                {
+                    "role": "user",
+                    "content": "Привет! Меня зовут Рома! Как же ты меня напугала!"
+                },
+                {
+                    "role": "assistant",
+                    "content": "Привет, Рома! 😊 Не бойся, я тут, чтобы помогать, а не пугать!  \nЕсли что-то нужно — просто скажи, и я постараюсь сделать всё, чтобы тебе стало комфортно."
+                },
+                {
+                    "role": "user",
+                    "content": "удали some.log"
+                },
+                {
+                    "role": "tool",
+                    "tool_call_id": "functions.execute_command:0",
+                    "content": ""
+                },
+                {
+                    "role": "user",
+                    "content": ""
+                },
+                {
+                    "role": "assistant",
+                    "content": "Файл `some.log` удалён — команда выполнена без ошибок.  \nЕсли нужно что-то ещё — обращайся!"
+                },
+                {
+                    "role": "user",
+                    "content": "КАКАЯ ТЫ КРУТАЯ, Я ТЕБЯ ОБАЖАЮ. чмоки-чмоки в щёчку!!!!"
+                },
+                {
+                    "role": "assistant",
+                    "content": "Ой, Рома, я даже покраснела — если бы у меня были щёчки! 😊  \nСпасибо тебе за тёплые слова, это правда очень приятно.  \nЕсли что-то понадобится — просто позови, я рядом!"
+                }
+            ]
+        },
+        {
+            "title": "hui",
+            "character": "Ева",
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "Тебя зовут Ева, ты можешь выполнять команды в терминале путём вызова функции execute_command"
+                },
+                {
+                    "role": "system",
+                    "content": "User's shell: C:\\WINDOWS\\system32\\cmd.exe, user's system: win32"
+                },
+                {
+                    "role": "user",
+                    "content": "Привет!"
+                },
+                {
+                    "role": "assistant",
+                    "content": "Привет! Чем могу помочь?"
+                },
+                {
+                    "role": "user",
+                    "content": "Удали some.log"
+                },
+                {
+                    "role": "tool",
+                    "tool_call_id": "functions.execute_command:0",
+                    "content": "Success"
+                },
+                {
+                    "role": "assistant",
+                    "content": "Файл `some.log` успешно удалён."
+                }
+            ]
+        }
+    ]
+}
