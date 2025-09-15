@@ -8,6 +8,7 @@ from scripts import __platform__, __shell__, __config_file__, __character__, __u
 
 class ChatManager(Config):
     def __init__(self, fast_start: bool = False)  -> None:
+        super().__init__()
         self.config = self.load_config(__config_file__)
         self.chats = self.config['chats']
         self.api_key = self.config['api_key']
