@@ -32,9 +32,8 @@ def run(user_input: str) -> None:
         print(token, end="", flush=True)
 
 def main():
-    interface = Interface()
-
     if len(sys.argv) == 1:
+        interface = Interface()
         interface.chat()
         return
     
@@ -44,6 +43,7 @@ def main():
         return
     
     if sys.argv[1] == "config":
+        interface = Interface(do_nothing=True)
         if len(sys.argv) == 3 | 2:
                 raise "Передайте значение"
         if sys.argv[2] == "--api-key":

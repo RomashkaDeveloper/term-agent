@@ -7,7 +7,7 @@ from scripts.config import Config
 from scripts import __platform__, __shell__, __config_file__, __character__, __user__
 
 class ChatManager(Config):
-    def __init__(self, fast_start: bool = False)  -> None:
+    def __init__(self, fast_start: bool = False, do_nothing: bool = False)  -> None:
         super().__init__()
         self.config = self.load_config(__config_file__)
         self.chats = self.config['chats']
@@ -17,6 +17,9 @@ class ChatManager(Config):
         self.instruction = self.config['instruction'].format(character=self.character_name, user=self.user_name) if not self.config["custom_system_prompt"] else self.config["custom_system_prompt"]
         self.platform = __platform__
         self.shell = __shell__
+
+        if do_nothing:
+            return
 
         if fast_start:
             self.messages = self.fast_run()
@@ -108,8 +111,8 @@ class Model(ChatManager):
     MODEL: str = "moonshotai/kimi-k2:free"
     # MODEL = "mistralai/mistral-small-3.1-24b-instruct:free"
     
-    def __init__(self, fast_start: bool = False) -> None:
-        super().__init__(fast_start)
+    def __init__(self, fast_start: bool = False, do_nothing: bool = False) -> None:
+        super().__init__(fast_start, do_nothing)
     
     def get_response(self, user_input: str) -> Generator[str, None, None]:
         if user_input:
