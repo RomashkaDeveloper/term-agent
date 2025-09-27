@@ -107,9 +107,9 @@ class ChatManager(Config):
 
 class Model(ChatManager):
     # MODEL = "deepseek/deepseek-chat-v3-0324:free"
-    # MODEL = "deepseek/deepseek-chat-v3.1:free"
-    MODEL: str = "moonshotai/kimi-k2:free"
-    # MODEL = "mistralai/mistral-small-3.1-24b-instruct:free"
+    MODEL = "deepseek/deepseek-chat-v3.1:free"
+    # MODEL = "moonshotai/kimi-k2:free"
+    # MODEL: str = "mistralai/mistral-small-3.1-24b-instruct:free"
     
     def __init__(self, fast_start: bool = False, do_nothing: bool = False) -> None:
         super().__init__(fast_start, do_nothing)
@@ -170,9 +170,6 @@ class Model(ChatManager):
                 chunk_str = chunk.decode("utf-8").replace('data: ', '').strip()
                 if not chunk_str or chunk_str == "[DONE]":
                     continue
-                
-                with open("some.log", "a", encoding="utf-8-sig") as f:
-                    f.write(chunk_str + "\n")
 
                 try:
                     chunk_json = json.loads(chunk_str)
